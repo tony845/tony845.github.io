@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>	
+		<link type="text/css" rel="stylesheet" href="boxscore.css"/>
+		<link rel="stylesheet" href="jquery-ui.min.css">
+		<!--<link rel="stylesheet" href="jquery-ui.structure.min.css">
+		<link rel="stylesheet" href="jquery-ui.theme.min.css">-->
+		<meta charset="utf-8">
+		<!--<script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>-->
+		<script src="http://code.jquery.com/jquery-1.12.4.js"></script>
+		<!--<script src="http://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>-->
+		<!--<link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">-->
+		<script src="jquery-ui.min.js"></script>
+		<script type="text/javascript" src="boxscore.js"></script>
+		<script src="jquery.floatThead.js"></script>		<!--http://mkoryak.github.io/floatThead/#intro (other option https://datatables.net/) -->
+		
+		<title>Daily Boxscore</title>
+	</head>
+	
+	<body>
+		<div id="datepicker"></div>
+		
+			<!--<ul id="navbar0">
+				<li>Batters</li>
+				<li>Pitchers</li>
+			</ul>-->
+			
+		<ul id="navbar">
+			<li class="selected">Batters</li>
+			<li>Pitchers</li>
+		</ul>
+		
+		<select id="teams" name = "teams">
+		
+		</select>
+		
+		<div id="chart">
+			<table id="batters">
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Team</th>
+						<th>AB</th>
+						<th>R</th>
+						<th>H</th>
+						<th>RBI</th>
+						<th>BB</th>
+						<th>SO</th>
+						<th>SB</th>
+						<th>2B</th>
+						<th>3B</th>
+						<th>HR</th>
+						<th>AVG</th>
+						<th>HRs</th>
+						<th>Runs</th>
+						<th>RBIs</th>
+					</tr>
+				</thead>	
+				<tbody id="b_body">
+
+				</tbody>
+			</table>
+
+			<table id="pitchers">
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Team</th>
+						<th>IP</th>
+						<th>H</th>
+						<th>R</th>
+						<th>ER</th>
+						<th>BB</th>
+						<th>SO</th>
+						<th>ERA</th>
+					</tr>
+				</thead>	
+				<tbody id="p_body">
+
+				</tbody>
+			</table>
+		</div>
+		
+	</body>
+</html>
