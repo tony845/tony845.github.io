@@ -1,0 +1,39 @@
+#teams, #teams th, #teams td{
+	/*border-spacing: 5px;*/
+	/*border: 1px solid black;*/
+	border-collapse: collapse;
+	margin-top:0px;
+	text-align: center;
+	padding-left: 10px;
+	padding-right: 10px;
+	border-right:1px solid;
+}
+
+#teams thead{
+	border-bottom: 1px solid;
+}
+
+tbody tr:nth-of-type(odd){
+	background-color: #eee;
+}
+
+#teams tbody tr:hover{
+	font-weight: bold;
+}
+
+#right_side{
+	float:right;
+}
+
+/*#datepicker{
+	margin-top:16px;
+	*/
+	/*position:absolute;
+	right:0px;*/
+	/*float:right;
+}*/
+
+#right_side input{
+	font-size:medium;
+	padding-left:5px;
+}

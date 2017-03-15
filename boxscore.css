@@ -1,0 +1,99 @@
+table, th, td {
+	/*border-spacing: 5px;*/
+	/*border: 1px solid black;*/
+	border-collapse: collapse;
+	margin-top:0px;
+	text-align: center;
+	padding-right: 5px;
+}
+
+/*#chart, #teams{
+	display:inline-block;
+}*/
+
+tbody tr:nth-of-type(odd){
+	background-color: #eee;
+}
+
+#datepicker{
+	margin-top:16px;
+	position:fixed;
+}
+
+/*#navbar0 li{
+	display:inline;
+	padding:5px 5px 5px 5px;
+	font-size:1.25em;
+	cursor:pointer;
+	border-radius:10px;
+	margin-right:10px;
+	font-weight:bold;
+}*/
+
+#navbar{
+	margin-top:190px;
+	margin-left:0px;
+	padding-left:120px;
+	position:fixed;
+	list-style-type:none;
+	text-align: right;
+}
+
+#teams{
+	margin-top:265px;
+	margin-left:70px;
+	position:fixed;
+	font-size:11pt;
+}
+
+.selected{
+	color:black;
+	background:#e3f3f7;
+	border-radius:3px;
+	box-shadow:3px 3px 8px
+}
+
+#navbar li{
+	/*padding-bottom:5px;*/
+	font-size:1.25em;
+	cursor:pointer;
+	border-radius:10px;
+	/*margin-right:10px;*/
+	font-weight:bold;
+	padding: 0px 7px 5px 5px;
+	border-radius:2px;
+	margin-bottom:7px;
+}
+
+#navbar li:hover{
+	text-shadow:1px 1px 3px #adabab;
+}
+
+#navbar0, #batters, #pitchers{
+	margin-left:250px;
+}
+
+#chart thead{
+	color:white;
+	background:black;
+	cursor:pointer;
+}
+
+#chart{
+	height:500px;
+	overflow:auto;
+	display:inline-block;		/*http://stackoverflow.com/questions/9189810/css-display-inline-vs-inline-block*/
+}
+
+#chart tbody tr:hover{
+	font-weight: bold;
+}
+
+#chart th:hover{
+	color:black;
+	background:white;
+}
+
+#pitchers{
+	display:none;
+}
