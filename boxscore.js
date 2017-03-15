@@ -26,13 +26,13 @@ $(document).ready(function(){
 		if (day<10) day = "0" + day;
 		var date = year + "_" + month + "_" + day;
 		//var path = "http://gd2.mlb.com/components/game/mlb/year_" + year + "/month_" + month + "/day_" + day + "/gid_" + date + "_bosmlb_nyamlb_1/boxscore.json";
-		var path_day = "https://gd2.mlb.com/components/game/mlb/year_" + year + "/month_" + month + "/day_" + day + "/miniscoreboard.json";
+		var path_day = "http://gd2.mlb.com/components/game/mlb/year_" + year + "/month_" + month + "/day_" + day + "/miniscoreboard.json";
 		
 		$.getJSON(path_day, function(data){
 			players={"batters":[], "pitchers":[], "teams":[]};	//reset
 			var calls=[];
 			for (var i = 0; i<data.data.games.game.length; i++){
-				var path_game =  "https://gd2.mlb.com/" + data.data.games.game[i].game_data_directory + "/boxscore.json";
+				var path_game =  "http://gd2.mlb.com/" + data.data.games.game[i].game_data_directory + "/boxscore.json";
 				calls.push(GetGameData(path_game, players));	//put all function calls (deferred objects) into array to run logic once all are done (cause getJSON is asynchronous)
 			}
 			
