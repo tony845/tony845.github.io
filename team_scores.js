@@ -3,13 +3,14 @@ $(document).ready(function(){
 	var teams={};
 	
 	$( "#datepicker" ).datepicker(
-		{defaultDate: new Date(2017,2,1), //-1,
+		{defaultDate: new Date(2017,3,2), //-1,
 			onSelect: function(dateText){
 				GetScoresSince(new Date(dateText));
 			}
 		});
 		
 	GetScoresSince($( "#datepicker" ).datepicker( "getDate" ));
+	
 	
 	function GetScoresSince(boxdate){
 		var today = new Date();
@@ -25,6 +26,7 @@ $(document).ready(function(){
 		
 		$.when.apply($, calls).done(function(){				//APPLY: http://stackoverflow.com/questions/5627284/pass-in-an-array-of-deferreds-to-when
 			var arrTeams =[];
+			if (document.location.href.endsWith("phoenix.html")) var names = SetNames();		//https://www.w3schools.com/jsref/obj_location.asp
 			
 			for (var prop in teams){
 				arrTeams.push({name: prop, scores:teams[prop], count: teams[prop].filter(function(x){return true}).length} );		//http://stackoverflow.com/questions/6265940/count-empty-values-in-array
@@ -39,6 +41,7 @@ $(document).ready(function(){
 				var team = arrTeams[i];
 				if (team.scores.length<14) team.scores[13]="";		//to force an array of 0-13
 				var row = row + "<tr>" + "<td>" + team.name + "</td>";
+				if (names) row += "<td>" + names[team.name] + "</td>";
 				
 				for (var j=0; j<team.scores.length; j++){ 
 					row += "<td>" + (team.scores[j]==null? "" : team.scores[j].slice(5)) + "</td>";
@@ -89,5 +92,59 @@ $(document).ready(function(){
 		});
 		return deferred;
 	};
+	
+	/*
+	$("#usernames").change(function(){		
+		var reader = new FileReader();
+		
+		reader.onload = function(){
+			console.log(reader);
+			//console.log(reader.result);
+			console.log("reader onload");
+		};
+		
+		var selectedFile = document.getElementById('usernames').files[0];
+		//var selectedFile = this.files[0];							//ALTERNATIVE
+		//var selectedFile = $("#usernames")[0].files[0];	//ALTERNATIVE
+		//console.log(selectedFile);
+		
+		reader.readAsText(selectedFile);
+
+	});
+	*/
+	
+	function SetNames(){
+		return {"LA Angels":"Alex",
+				"Arizona":"Frockers",
+				"Colorado":"VJ",
+				"Oakland":"Shrugs",
+				"San Francisco":"PTK",
+				"Seattle":"Arun",
+				"Tampa Bay":"PTK",
+				"Atlanta":"Arun",
+				"Chi Cubs":"Tony",
+				"Cincinnati":"Eric",
+				"Cleveland":"Shrugs",
+				"Houston":"Chris",
+				"LA Dodgers":"Tim",
+				"Milwaukee":"Tony",
+				"Minnesota":"Alex",
+				"NY Yankees":"Paul",
+				"San Diego":"Arun",
+				"Texas":"Tom",
+				"Toronto":"Tom",
+				"Washington":"Pete M",
+				"Boston":"Tim",
+				"Chi White Sox":"Arun",
+				"Detroit":"Khanh",
+				"Miami":"Khanh",
+				"Kansas City":"VJ",
+				"NY Mets":"Chris",
+				"Philadelphia":"Frockers",
+				"Pittsburgh":"Eric",
+				"St. Louis":"Paul",
+				"Baltimore":"Pete M"
+		}
+	}
 	
 });
